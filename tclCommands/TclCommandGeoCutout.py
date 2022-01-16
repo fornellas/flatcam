@@ -59,7 +59,7 @@ class TclCommandGeoCutout(TclCommandSignaled):
             ('dia', 'Tool diameter.'),
             ('margin', 'Margin over bounds.'),
             ('gapsize', 'size of gap.'),
-            ('gaps', "type of gaps. Can be: 'tb' = top-bottom, 'lr' = left-right, '2tb' = 2top-2bottom, "
+            ('gaps', "type of gaps. Can be: 'None', tb' = top-bottom, 'lr' = left-right, '2tb' = 2top-2bottom, "
                      "'2lr' = 2left-2right, '4' = 4 cuts, '8' = 8 cuts"),
             ('outname', 'Name of the resulting Geometry object.'),
         ]),
@@ -184,9 +184,9 @@ class TclCommandGeoCutout(TclCommandSignaled):
                 "[WARNING] %s" % _("Tool Diameter is zero value. Change it to a positive real number."))
             return "Tool Diameter is zero value. Change it to a positive real number."
 
-        if gaps not in ['lr', 'tb', '2lr', '2tb', '4', '8']:
+        if gaps not in ['None', 'lr', 'tb', '2lr', '2tb', '4', '8']:
             self.app.inform.emit(
-                "[WARNING] %s" % _("Gaps value can be only one of: 'lr', 'tb', '2lr', '2tb', 4 or 8."))
+                "[WARNING] %s" % _("Gaps value can be only one of: 'None', 'lr', 'tb', '2lr', '2tb', 4 or 8."))
             return
 
         # Get min and max data for each object as we just cut rectangles across X or Y
