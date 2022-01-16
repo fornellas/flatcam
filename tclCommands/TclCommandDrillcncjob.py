@@ -233,7 +233,7 @@ class TclCommandDrillcncjob(TclCommandSignaled):
                 toolchange = self.app.defaults["tools_drill_toolchange"]
                 toolchangez = float(self.app.defaults["tools_drill_toolchangez"])
 
-            if "toolchangexy" in args and args["tools_drill_toolchangexy"]:
+            if "toolchangexy" in args:
                 xy_toolchange = args["toolchangexy"]
             else:
                 if self.app.defaults["tools_drill_toolchangexy"]:
