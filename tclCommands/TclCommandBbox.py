@@ -85,7 +85,7 @@ class TclCommandBbox(TclCommand):
                 par = args['rounded']
             rounded = bool(eval(par))
         else:
-            rounded = bool(eval(self.app.defaults["gerber_bboxrounded"]))
+            rounded = self.app.defaults["gerber_bboxrounded"]
 
         del args['name']
 
