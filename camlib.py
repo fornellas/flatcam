@@ -603,6 +603,8 @@ class Geometry(object):
         # add in tools solid_geometry
         if tool is None or tool not in self.tools:
             tool = 1
+        if self.tools[tool]['solid_geometry'] is None:
+            self.tools[tool]['solid_geometry'] = self.solid_geometry
         self.tools[tool]['solid_geometry'].append(new_circle)
 
         # calculate bounds
@@ -644,6 +646,8 @@ class Geometry(object):
         # add in tools solid_geometry
         if tool is None or tool not in self.tools:
             tool = 1
+        if self.tools[tool]['solid_geometry'] is None:
+            self.tools[tool]['solid_geometry'] = self.solid_geometry
         self.tools[tool]['solid_geometry'].append(new_poly)
 
         # calculate bounds
@@ -685,6 +689,8 @@ class Geometry(object):
         # add in tools solid_geometry
         if tool is None or tool not in self.tools:
             tool = 1
+        if self.tools[tool]['solid_geometry'] is None:
+            self.tools[tool]['solid_geometry'] = self.solid_geometry
         self.tools[tool]['solid_geometry'].append(new_line)
 
         # calculate bounds
