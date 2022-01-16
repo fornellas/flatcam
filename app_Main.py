@@ -7882,13 +7882,13 @@ class App(QtCore.QObject):
                     # only the Gerber obj has on_plot_cb_click() method
                     obj.ui.plot_cb.stateChanged.disconnect(obj.on_plot_cb_click)
                     obj.ui.plot_cb.setDisabled(True)
-                except AttributeError:
+                except (AttributeError, TypeError):
                     pass
                 obj.set_form_item("plot")
                 try:
                     obj.ui.plot_cb.stateChanged.connect(obj.on_plot_cb_click)
                     obj.ui.plot_cb.setDisabled(False)
-                except AttributeError:
+                except (AttributeError, TypeError):
                     pass
                 obj.options.set_change_callback(obj.on_options_change)
 
