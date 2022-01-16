@@ -794,7 +794,7 @@ class App(QtCore.QObject):
                                   'options', 'origin',
                                   'paint', 'panelize', 'plot_all', 'plot_objects', 'plot_status', 'quit_flatcam',
                                   'save', 'save_project',
-                                  'save_sys', 'scale', 'set_active', 'set_origin', 'set_path', 'set_sys',
+                                  'save_sys', 'scale', 'set_active', 'set_all_inactive', 'set_origin', 'set_path', 'set_sys',
                                   'skew', 'subtract_poly', 'subtract_rectangle',
                                   'version', 'write_gcode'
                                   ]

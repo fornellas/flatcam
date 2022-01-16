@@ -60,6 +60,7 @@ import tclCommands.TclCommandSaveProject
 import tclCommands.TclCommandSaveSys
 import tclCommands.TclCommandScale
 import tclCommands.TclCommandSetActive
+import tclCommands.TclCommandSetAllInactive
 import tclCommands.TclCommandSetOrigin
 import tclCommands.TclCommandSetPath
 import tclCommands.TclCommandSetSys
