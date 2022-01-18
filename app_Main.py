@@ -8119,6 +8119,19 @@ class App(QtCore.QObject):
         except Exception:
             traceback.print_exc()
 
+    def save_project(self, filename, quit_action=False, silent=False, from_tcl=False):
+        """
+        Saves the current project to the specified file.
+
+        :param filename:        Name of the file in which to save.
+        :type filename:         str
+        :param quit_action:     if the project saving will be followed by an app quit; boolean
+        :param silent:          if True will not display status messages
+        :param from_tcl         True is run from Tcl Shell
+        :return:                None
+        """
+        return self.f_handlers.save_project(filename, quit_action=False, silent=False, from_tcl=False)
+
     def save_project_auto(self):
         """
         Called periodically to save the project.
