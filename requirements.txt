@@ -14,7 +14,7 @@ setuptools
 dill
 rtree
 pyopengl
-vispy
+vispy==0.8.1
 ortools>=7.0
 svg.path>=4.0
 simplejson
@@ -27,5 +27,6 @@ ezdxf
 qrcode>=6.1
 reportlab>=3.5
 svglib
-gdal
+# Pinned to match Ubuntu focal gdal version
+gdal==3.0.4
 pyserial>=3.4
