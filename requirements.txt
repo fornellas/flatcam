@@ -28,5 +28,5 @@ qrcode>=6.1
 reportlab>=3.5
 svglib
 # Pinned to match Ubuntu focal gdal version
-gdal==3.0.4
+gdal==3.4.1
 pyserial>=3.4
