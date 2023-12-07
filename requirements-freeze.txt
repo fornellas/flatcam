@@ -1,33 +1,40 @@
 affine==2.3.0
 attrs==20.3.0
+certifi==2023.11.17
 click==7.1.2
-click_plugins==1.1.1
+click-plugins==1.1.1
 cligj==0.7.0
 colorama==0.4.4
 cssselect2==0.4.1
+cycler==0.12.1
 dill==0.3.3
 ezdxf==0.14.2
-fontTools==4.16.1
-freetype-py==2.1.0 # guessed version
-gdal==3.0.4 # Pinned to ubuntu version, should be 3.0.1
+fonttools==4.16.1
+freetype-py==2.1.0
+GDAL==3.0.4
+kiwisolver==1.4.5
 lxml==4.6.1
 matplotlib==3.3.2
 numpy==1.19.2
-ortools==7.8.7959 # Should be 7.5.7466, but this version is gone
+ortools==7.8.7959
 Pillow==8.0.1
-pyopengl==3.1.5
+protobuf==4.25.1
 PyOpenGL==3.1.5
+pyparsing==3.1.1
 PyQt5==5.15.0
+PyQt5-sip==12.13.0
 pyserial==3.4
 python-dateutil==2.8.1
-qrcode==6.1 # guessed version
+qrcode==6.1
 rasterio==1.1.8
 reportlab==3.5.55
-rtree==0.9.4
-shapely==1.7.1
+Rtree==0.9.4
+Shapely==1.7.1
 simplejson==3.17.2
+six==1.16.0
 snuggs==1.4.7
-svg.path==4.0.2 # guess
+svg.path==4.0.2
 svglib==1.0.1
 tinycss2==1.1.0
 vispy==0.6.5
+webencodings==0.5.1
