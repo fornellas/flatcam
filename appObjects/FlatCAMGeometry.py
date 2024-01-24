@@ -2171,7 +2171,8 @@ class GeometryObject(FlatCAMObj, Geometry):
                 pp_geometry_name = tools_dict[tooluid_key]['data']["ppname_g"]
 
                 spindledir = self.app.defaults['geometry_spindledir']
-                tool_solid_geometry = self.solid_geometry
+                tool_solid_geometry = tools_dict[tooluid_key]['solid_geometry']
+                self.solid_geometry = tool_solid_geometry
 
                 job_obj.coords_decimals = self.app.defaults["cncjob_coords_decimals"]
                 job_obj.fr_decimals = self.app.defaults["cncjob_fr_decimals"]

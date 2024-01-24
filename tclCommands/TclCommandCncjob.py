@@ -249,7 +249,7 @@ class TclCommandCncjob(TclCommandSignaled):
                     if args["extracut"] is True:
                         local_tools_dict[tool_uid]['data']['extracut_length'] = args["extracut_length"]
                     else:
-                        local_tools_dict[tool_uid]['data']['extracut_length'] = None
+                        local_tools_dict[tool_uid]['data']['extracut_length'] = 0.0
 
                     local_tools_dict[tool_uid]['data']['depthperpass'] = args["dpp"]
                     local_tools_dict[tool_uid]['data']['toolchange'] = args["toolchange"]
