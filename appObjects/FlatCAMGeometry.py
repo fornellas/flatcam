@@ -2164,7 +2164,7 @@ class GeometryObject(FlatCAMObj, Geometry):
                 toolchangexy = tools_dict[tooluid_key]['data']["toolchangexy"]
                 startz = tools_dict[tooluid_key]['data']["startz"]
                 endz = tools_dict[tooluid_key]['data']["endz"]
-                endxy = self.options["endxy"]
+                endxy = tools_dict[tooluid_key]['data']["endxy"]
                 spindlespeed = tools_dict[tooluid_key]['data']["spindlespeed"]
                 dwell = tools_dict[tooluid_key]['data']["dwell"]
                 dwelltime = tools_dict[tooluid_key]['data']["dwelltime"]
