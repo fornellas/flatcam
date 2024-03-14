@@ -14,15 +14,10 @@ if [ "$1"  == "-h" ] || [ "$1" == "--help"  ] ; then
 	usage
 fi
 
-DOCKER_PLATFORM_ARCH_NATIVE="$(docker system info --format '{{.Architecture}}')"
-if [ -z "$DOCKER_PLATFORM" ] ; then
-	DOCKER_PLATFORM="linux/$DOCKER_PLATFORM_ARCH_NATIVE"
-fi
+DOCKER_PLATFORM="linux/amd64"
 
 GID="$(id -g)"
 GROUP="$(getent group $(getent passwd $USER | cut -d: -f4) | cut -d: -f1)"
-
-GIT_ROOT="$(cd $(dirname $0) && git rev-parse --show-toplevel)"
 
 echo "Building Docker image..."
 DOCKER_IMAGE="$(docker build \
@@ -44,15 +39,17 @@ function kill_container() {
 
 trap kill_container EXIT
 
+GIT_ROOT="$(cd $(dirname $0) && git rev-parse --show-toplevel)"
+
 docker run \
 	--name "${NAME}" \
 	--platform ${DOCKER_PLATFORM} \
-	--user "${UID}:${GID}" \
 	--rm \
 	--tty \
 	--interactive \
-	--volume ${GIT_ROOT}:${HOME}/flatcam \
-	--workdir ${HOME}/flatcam \
+	--net=host \
+	--volume ${HOME}:${HOME} \
+    --env HOME=$HOME \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --env DISPLAY=$DISPLAY \
-	${DOCKER_IMAGE}
+	${DOCKER_IMAGE} python3 "$GIT_ROOT/FlatCAM.py"
